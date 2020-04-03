@@ -13,7 +13,7 @@ env_snow_pw_encryp = os.environ['snowflake_pw']
 env_snow_pw_decryp = boto3.client('kms').decrypt(CiphertextBlob=b64decode(env_snow_pw_encryp))['Plaintext']
 
 #simple query to return a value from Snowflake
-query = "SELECT current_version()."
+query = "SELECT current_version()"
 
 
 #add lambda injection point
