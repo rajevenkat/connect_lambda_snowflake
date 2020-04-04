@@ -10,7 +10,7 @@ from base64 import b64decode
 env_snow_account = os.environ['snowflake_account']
 env_snow_user = os.environ['snowflake_user']
 env_snow_pw_encryp = os.environ['snowflake_pw']
-env_snow_pw_decryp = boto3.client('kms').decrypt(CiphertextBlob=b64decode(env_snow_pw_encryp))['Plaintext']
+env_snow_pw_decryp = env_snow_pw_encryp
 
 #simple query to return a value from Snowflake
 query = "SELECT current_version()"
